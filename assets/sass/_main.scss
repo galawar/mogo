@@ -1,0 +1,859 @@
+//------------------------------------------------------------ row
+.row {
+	width: 100%;
+	max-width: $page_width + $gl_indent;
+	@extend %global_flex_block_row_wrap_center;
+
+	&.wide_mod {
+		min-width: 100%;
+	}
+}
+
+//------------------------------------------------------------ section
+.section {
+	@extend %global_flex_block_column_nowrap_center_center;
+	text-align: center;
+	margin: 0 0 $gl_indent 0;
+
+	@include bp($point_2, min) {
+		margin: 0 0 $gl_indent * 3 0;
+	}
+
+	// mods
+	&.intro_mod {
+		color: $white;
+		padding: $gl_indent 0;
+		@include bg('../i/intro-bg.jpg');
+		@include bp($point_2, min) {
+			padding: ($gl_indent * 7) 0 ($gl_indent * 7.65) 0;
+		}
+	}
+
+	&.design_mod {
+		//margin-bottom: 10rem;
+		@extend %moded_section;
+		@include bg('../i/design-bg.jpg');
+	}
+
+	&.what_mod {
+		@extend %moded_section;
+		@include bg('../i/what-bg.jpg');
+	}
+
+	&.map_mod {
+		padding: 5rem 0;
+		@include bg('../i/map-bg.jpg');
+	}
+
+	&.footer_mod {
+		text-align: left;
+		@include cols(4);
+	}
+}
+
+.section_title {
+	position: relative;
+	@extend %global_flex_block_column_nowrap_center_center;
+	color: $color_text_dark;
+	padding: 0 ($gl_indent / 2) $gl_indent;
+	margin: 0 0 $gl_indent 0;
+
+	@include bp($point_2, min) {
+		padding: 0 0 ($gl_indent * 1.33) 0;
+		margin: 0 0 ($gl_indent * 1.4) 0;
+	}
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		@include redline;
+	}
+
+	.title1 {
+		font-size: 2.4rem;
+		font-family: $font_title1;
+		margin: 0 0 1rem 0;
+
+		&.intro_mod {
+			color: inherit;
+			font-size: 3rem;
+
+			@include bp($point_3, min) {
+				font-size: 4rem;
+			}
+			@include bp($point_2 ,min) {
+				font-size: 7.2rem;
+				margin: 0 0 2rem 0;
+			}
+		}
+	}
+
+	.title2 {
+		font-size: 3rem;
+		font-weight: $font_bold;
+		font-family: $font_title2;
+		text-transform: uppercase;
+		line-height: 0.9;
+
+		&.intro_mod {
+			color: inherit;
+			font-size: 4rem;
+
+			@include bp($point_3, min) {
+				font-size: 7rem;
+			}
+			@include bp($point_2, min) {
+				font-size: 15rem;
+			}
+		}
+
+		&.footer_mod {
+			font-size: $font_size_base;
+		}
+	}
+
+	// mods
+	&.intro_mod {
+		color: $white;
+		padding: 0 0 ($gl_indent * 2.2) 0;
+		margin: 0 0 ($gl_indent * 1.6) 0;
+		&:after {
+			background: $white;
+		}
+	}
+
+	&.map_mod {
+		color: $red;
+		margin: 0;
+		padding-bottom: 2.2rem;
+		@extend %icon-marker;
+		&:before {
+			font-size: 3rem;
+			padding-bottom: 1rem;
+		}
+	}
+
+	&.footer_mod {
+		padding: 0;
+		margin: 0 0 4rem 0;
+		align-items: flex-start;
+		&:after {
+			background: none;
+		}
+	}
+}
+
+.section_descr {
+	max-width: 95rem;
+	margin: 0 ($gl_indent / 2) $gl_indent;
+
+	@include bp($point_2, min) {
+		margin: 0 auto ($gl_indent * 2.8);
+	}
+}
+
+//------------------------------------------------------------ images
+.image_link {
+	position: relative;
+	margin: $gl_indent / 2;
+	@extend %global_flex_block_row_nowrap_center;
+}
+
+.image_wrap {
+	@extend %global_flex_block_column_nowrap_flex-start;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	@include transition(0.3s, 0.1s);
+
+	// mods
+	&.effect2_mod {
+		overflow: visible;
+	}
+	&.big_mod {
+		//min-width: 38rem;
+		min-height: 47rem;
+	}
+	&.preview_mod {
+		flex: 0 0 100%;
+		//max-width: 39rem;
+		//max-height: 48rem;
+	}
+	&.what_mod {
+		//max-width: 57rem;
+		//max-height: 38rem;
+		@include cols(10);
+		@include bp($point_3, min) {
+			@include cols(6);
+		}
+	}
+	&.blog_mod {
+		height: 24rem;
+	}
+}
+
+.image_c_title {
+	display: block;
+	//margin: 2rem 0 0 0;
+	color: $color_text_dark;
+	font-size: 1.5rem;
+	font-family: $font_title2;
+	text-transform: uppercase;
+}
+
+.image_c_text {
+	display: block;
+	color: $color_text_base;
+	font-size: 1.4rem;
+	font-family: $font_1;
+	font-style: italic;
+	text-transform: none;
+}
+
+.image_caption {
+	@extend %overlay;
+
+	&.story_mod {
+		&:before {
+			@extend %icon-users;
+			font-size: 3rem;
+		}
+	}
+}
+
+.effect1_mod {
+	.image_caption {
+		opacity: 0;
+		@include transition(0.3s, 0.2s);
+	}
+
+	&:hover {
+		top: -1rem;
+		left: -1rem;
+		box-shadow: 1rem 1rem 0 0 $blue;
+		@include transition(.3s, .2s);
+
+		.image_caption {
+			opacity: 1;
+			@include transition(.3s, .2s);
+		}
+	}
+}
+
+.effect2_mod {
+	.image_caption {
+		opacity: 0;
+		@include transition(.3s, .2s);
+		&:before {
+			@extend %icon-picture;
+			font-size: 4rem;
+		}
+	}
+	.image_c_title {
+		color: inherit;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+	.image_c_text {
+		color: inherit;
+		font-family: $font_1;
+		font-size: 1.3rem;
+	}
+
+	&:hover {
+		.image_caption {
+			opacity: 1;
+			@include transition(.2s, .1s);
+		}
+	}
+}
+
+//------------------------------------------------------------ social_link
+.social_list {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	//padding-left: 8rem;
+	position: relative;
+	&:before {
+		left: 0;
+		content: 'Follow Us:';
+		font-style: italic;
+		padding: 0.6rem 1rem 0 0;
+	}
+	
+	&.footer_mod {
+		margin-bottom: $gl_indent;
+	}
+}
+
+.social_item {
+	margin-right: 1rem;
+	&:last-of-type {
+		margin: 0;
+	}
+}
+
+.social_link {
+	text-indent: -9999px;
+	font-size: 2rem;
+
+	@each $mod in facebook, twitter, instagram, pinterest, google-plus, youtube, dribbble {
+		&.#{$mod}_mod {
+			@extend %icon-#{$mod};
+		}
+	}
+}
+
+//------------------------------------------------------------ intro
+.more_btn {
+	@extend %st_btn;
+	@extend %big_btn;
+
+	&.intro_mod {
+		@extend %white_btn;
+	}
+}
+
+.stories_list {
+	@extend %row;
+
+	@include bp($point_2, min) {
+		margin-bottom: $gl_indent * 2.2;
+	}
+}
+
+.stories_l_item {
+	flex: 0 0 100%;
+	@include bp($point_3, min) {
+		flex: 0 0 50%;
+	}
+	@include bp($point_2, min) {
+		flex: 0 0 33.33%;
+	}
+}
+
+//------------------------------------------------------------ services
+.services_list {
+	@extend %row;
+}
+
+.services_l_item {
+	width: 36rem;
+	text-align: left;
+	@include cols(12);
+
+	@include bp($point_3, min) {
+		@include cols(6);
+	}
+
+	@include bp($point_2, min) {
+		@include cols(4);
+	}
+}
+
+.service_block {
+	position: relative;
+	padding: 0 0 0 8rem;
+
+	@include bp($point_3, min) {
+		padding: 0 0 4rem 8rem;
+	}
+
+	&:before {
+		position: absolute;
+		color: $blue;
+		font-size: 4rem;
+		top: -1rem;
+		left: 2rem;
+	}
+
+	&.photo_mod { @extend %icon-camera; }
+	&.design_mod { @extend %icon-design; }
+	&.comp_mod { @extend %icon-laptop; }
+	&.html_mod { @extend %icon-home; }
+	&.seo_mod { @extend %icon-target; }
+	&.digit_mod { @extend %icon-digital; }
+
+	.service_title {
+		@extend %title;
+		margin: 0 0 2rem 0;
+	}
+
+	.service_text {
+		max-height: 6rem;
+		line-height: 1.42;
+		overflow: hidden;
+	}
+}
+
+//------------------------------------------------------------ facts
+.facts_list {
+	@extend %row;
+	align-items: stretch;
+	position: relative;
+	color: $white;
+	padding: $gl_indent / 2;
+	background: $blue;
+	
+	@include bp($point_2, min) {
+		padding: 0;
+	}
+
+	&:before, &:after {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 200%;
+		content: '';
+		background: $blue;
+	}
+	&:before {
+		left: -200%;
+	}
+	&:after {
+		right: -200%;
+	}
+}
+
+.facts_l_item {
+	border-collapse: collapse;
+	border: 1px solid rgba(255,255,255,0.3);
+	padding: $gl_indent / 2 0;
+	margin: 0;
+	flex: 0 0 100%;
+
+	@include bp($point_4, min) {
+		flex: 0 0 50%;
+	}
+
+	@include bp($point_3, min) {
+		flex: 0 0 33.33%;
+		margin: 0;
+	}
+
+	@include bp($point_2, min) {
+		padding: 5rem 0;
+		flex: 0 0 20%;
+	}
+}
+
+.fact_block {
+	font-family: $font_title2;
+	@extend %global_flex_block_column_nowrap_center_stretch;
+
+	.fact_text {
+		order: 1;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	.fact_num {
+		font-size: 3.2rem;
+		font-weight: $font_bold;
+		@include bp($point_3, min) {
+			font-size: 5rem;
+		}
+
+		@include bp($point_2, min) {
+			font-size: 7.2rem;
+		}
+	}
+}
+
+//------------------------------------------------------------ design
+.design_previews {
+	position: relative;
+	@include row;
+}
+
+.design_image {
+	position: relative;
+
+	&.hover_mod {
+		position: absolute;
+		right: -1rem;
+		bottom: 0;
+		width: 70%;
+
+		@include bp($point_3, min) {
+			width: auto;
+		}
+		@include bp($point_2, min) {
+			right: 13rem;
+			bottom: -9.7rem;
+		}
+		@include bp($point_1, min) {
+			right: 25rem;
+		}
+	}
+}
+
+//------------------------------------------------------------ team
+.team_list {
+	@include row;
+}
+
+.team_l_item {
+	//min-width: 30rem;
+	//max-width: 38rem;
+	@include cols(10);
+	align-content: center;
+
+	@include bp($point_4, min) {
+		@include cols(8)
+	}
+
+	@include bp($point_3, min) {
+		@include cols(6);
+	}
+
+	@include bp($point_2, min) {
+		@include cols(4);
+	}
+}
+
+.teammate_socials {
+	@extend %global_flex_block_row_wrap_center_center;
+}
+
+.teammate_block {
+	position: relative;
+}
+
+.teammate_s_link {
+	@extend %st_btn;
+	@extend %social_btn;
+	@extend %yellow_btn;
+	margin: 0 1px 1px 0;
+
+	&:hover {
+		@extend %red_btn;
+	}
+
+	@each $mod in ('facebook', 'twitter', 'google-plus', 'pinterest', 'instagram') {
+		&.#{$mod}_mod {
+			font-size: 2.8rem;
+			@extend %icon-#{$mod};
+		}
+	}
+}
+
+//------------------------------------------------------------ what
+.what {
+	@include row;
+	//margin-bottom: 10rem;
+}
+
+.accordion {
+	@include cols(12);
+	width: 100%;
+	max-width: 60rem;
+	text-align: left;
+	border-collapse: collapse;
+
+	@include bp($point_3, min) {
+		@include cols(6);
+	}
+}
+.accordion_item {
+	border: 1px solid $color_text_base;
+	margin: 0 0 1rem 0;
+}
+.accordion_title {
+	@extend %title;
+	position: relative;
+	cursor: pointer;
+	height: 5.8rem;
+	line-height: 5.8rem;
+	padding: 0 0 0 $gl_indent * 2;
+	@include borderbottom;
+	&:before {
+		position: absolute;
+		color: $blue;
+		font-size: 3rem;
+		left: 1.5rem;
+	}
+
+	&.photo_mod {
+		@extend %icon-picture;
+	}
+	&.creative_mod {
+		@extend %icon-target;
+	}
+	&.design_mod {
+		@extend %icon-design;
+	}
+}
+
+.accordion_content {
+	margin: 2rem;
+	padding: 0 1.5rem 0 0;
+	text-align: left;
+	font-size: 1.6rem;
+	font-style: italic;
+	max-height: 15rem;
+	overflow-y: scroll;
+}
+
+//------------------------------------------------------------ works previews
+.works_list {
+	@include row-wide;
+	@extend %global_flex_block_row_wrap_center;
+}
+
+.works_l_item {
+	flex: 0 0 100%;
+
+	@include bp($point_4, min) {
+		flex: 0 0 50%;
+	}
+	@include bp($point_3, min) {
+		flex: 0 0 33.33%;
+	}
+}
+
+//------------------------------------------------------------ testimonials
+//.testimonials {
+//	@include clearfix;
+//	position: relative;
+//	text-align: left;
+	//&:before,
+	//&:after {
+	//	position: absolute;
+	//	top: 0;
+	//	content: '';
+	//	height: 100%;
+	//	width: 200%;
+	//	background: $gray;
+	//}
+	//
+	//&:before {
+	//	left: -200%;
+	//}
+	//
+	//&:after {
+	//	right: -200%;
+	//}
+	//
+	//&.gray_mod, &:after, &:before {
+	//	background: $gray;
+	//}
+//}
+
+//.slider_wrap {
+//	//@include clearfix;
+//	position: relative;
+//	padding: 1rem;
+//	@include row;
+//	background: $gray;
+//
+//	.bx-wrapper .bx-controls-direction a {
+//		position: absolute;
+//		top: 50%;
+//		transform: translateY(-50%);
+//		outline: 0;
+//		width: 32px;
+//		height: 32px;
+//		color: $color_text_base;
+//		line-height: 32px;
+//		z-index: 9999;
+//		font-size: 3rem;
+//	}
+//
+//	.bx-wrapper .bx-prev {
+//		left: 2rem;
+//		@extend %icon-chevron-left;
+//	}
+//
+//	.bx-wrapper .bx-next {
+//		right: 2rem;
+//		@extend %icon-chevron-right;
+//	}
+//}
+
+//.testimonials_item {
+	//@include clearfix;
+	//position: relative;
+	//padding: 0 3rem 0 10rem;
+	//height: 15rem;
+
+	//&.icon_mod {
+	//	&:before {
+	//		display: none;
+	//	}
+	//
+	//	@include bp($point_2, min) {
+	//		padding-left: 20rem;
+	//
+	//		&:before {
+	//			display: block;
+	//			position: absolute;
+	//			left: 0;
+	//			height: 100%;
+	//			width: 15rem;
+	//			color: $blue;
+	//			line-height: 15rem;
+	//			font-size: 5rem;
+	//			text-align: center;
+	//			@extend %icon-talk;
+	//			border: 3px solid $blue;
+	//		}
+	//	}
+	//}
+//}
+
+//.blockquote {
+//	position: relative;
+//	font-style: italic;
+//	font-size: 1.5rem;
+//	@include bp($point_2, min) {
+//		font-size: 2.4rem;
+//	}
+//}
+//
+//.cite {
+//	position: relative;
+//	padding: 0 0 0 8rem;
+//	color: $color_text_dark;
+//	font-family: $font_title1;
+//	font-size: 1.6rem;
+//
+//	@include bp($point_2, min) {
+//		font-size: 2.4rem;
+//	}
+//
+//	&:before {
+//		position: absolute;
+//		left: 0;
+//		top: 50%;
+//		transform: translateY(-50%);
+//		@include redline;
+//	}
+//}
+
+//------------------------------------------------------------ clients
+.clients {
+	@include row;
+	justify-content: space-around;
+	padding: 2rem 0 4rem;
+}
+
+.client_block {
+	@include cols(11);
+	text-align: left;
+	padding: 2rem 0;
+	@extend %global_flex_block_column_nowrap_center;
+
+	@include bp($point_2, min) {
+		@include cols(5);
+		flex-flow: row nowrap;
+	}
+
+	.image_c_title {
+		margin: 0;
+	}
+
+	.image_c_text {
+		position: relative;
+		padding-bottom: 3rem;
+		color: $color_text_dark;
+
+		&:after {
+			position: absolute;
+			left: 0;
+			bottom: 2rem;
+			@include redline;
+		}
+	}
+}
+
+.client_image {
+	flex: 0 0 10rem;
+	margin-right: $gl_indent;
+	.img {
+		height: 10rem;
+		border-radius: 50%;
+	}
+}
+
+//------------------------------------------------------------ recent
+.recent {
+	@include row;
+}
+
+.recent_post {
+	position: relative;
+	@include cols(12);
+	@include bp($point_3, min) {
+		@include cols(6);
+	}
+	@include bp($point_2, min) {
+		@include cols(4);
+	}
+
+	.image_caption {
+		position: relative;
+		opacity: 1;
+		background: none;
+		align-items: flex-start;
+		text-align: left;
+
+		.image_c_text {
+			font-style: normal;
+			font-weight: $font_def;
+			padding: 0 0 2rem 0;
+			@include borderbottom;
+		}
+	}
+
+	.post_date {
+		width: 6rem;
+		height: 7rem;
+		position: absolute;
+		left: -1rem;
+		top: -8.1rem;
+		color: $white;
+		line-height: 1.3;
+		background: $blue;
+		@extend %global_flex_block_column_nowrap_center_center;
+
+		.post_d_day {
+			font-size: 3rem;
+		}
+
+		.post_d_month {
+			font-size: 1.4rem;
+			font-weight: $font_def;
+			font-style: italic;
+			font-family: $font_1;
+			text-transform: none;
+		}
+	}
+
+	.post_stat_wrap {
+		flex-flow: row wrap;
+		.post_stat {
+			color: $color_text_base;
+			font-style: italic;
+			font-family: $font_1;
+			font-size: $font_size_base;
+			text-transform: none;
+			margin: 0 2rem 0 0;
+			&:last-of-type {
+				margin: 0;
+			}
+			&:before {
+				color: $blue;
+				margin-right: 0.5rem;
+			}
+			&.views_mod {
+				@extend %icon-eye;
+			}
+			&.comm_mod {
+				@extend %icon-comments;
+			}
+		}
+	}
+}

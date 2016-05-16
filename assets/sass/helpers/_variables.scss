@@ -1,0 +1,69 @@
+//---------------------------------------------fonts
+$font_path: '../fonts/';
+$font_1: 'Roboto', sans-serif;
+$font_def: 400;
+$font_bold: 700;
+$font_title1: 'Kaushan Script', cursive;
+$font_title2: 'Montserrat', sans-serif;
+$font_size_base: 1.4rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+$white: #fff;
+$black: #000;
+
+$red:    #f38181;
+$yellow: #fce38a;
+$green:  #eaffd0;
+$blue:   #95e1d3;
+$gray:   #f8f8f8;
+
+$color_text_base: #999999;
+$color_text_light: $gray;
+$color-border: #e5e5e5;
+$color_text_dark: #333333;
+$color_link_base: $blue;
+$body_bg: $white;
+
+//---------------------------------------------colors###
+
+//---------------------------------------------z-index
+$z-index: (
+	popap : 9999,
+	menu_trigger: 210,
+	header : 100,
+	footer : 100
+);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$height_footer: 49rem;
+$height_header: 8.5rem;
+$page_width: 120rem;
+
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_indent: 3rem;
+$gl_radius:.2rem;
+$gl_columns: 12;
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 768px;
+$point_4: 480px;
+$point_5: 320px;
+//---------------------------------------------media points###
+
+//---------------------------------------------forms
+$input_height: 4rem;
+$input_offset: 0 2rem;
+$input_font_size: $font_size_base;
+$input_border_color: #e7e7e7;
+$input_border_color_active: $black;
+$input_placeholder_color: $black;
+$input_text_color: $black;
+$input_radius: $gl_radius;
+//---------------------------------------------forms###

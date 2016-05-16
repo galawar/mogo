@@ -1,0 +1,52 @@
+//------------------------------------------------------------base styles
+html {
+	height: 100%;
+	font: normal 10px/1.33 $font_1;
+	font-weight: 300;
+}
+
+body {
+	position: relative;
+	height: 100%;
+	font-size: $font_size_base;
+	color: $color_text_base;
+	-webkit-text-size-adjust: none;
+	background: $body_bg;
+	line-height: 1.618;
+}
+.wrapper {
+	@extend %global_flex_block_column_wrap_flex-start;
+	position: relative;
+	//min-width: $page_width;
+	min-height:100%;
+	height: auto !important;
+	overflow-x:hidden;
+}
+
+.base {
+	flex: 1;
+	position:relative;
+	width: 100%;
+	max-width: 194rem;
+	margin: 0 auto;
+	padding: $height_header 0 $height_footer;
+}
+
+a {
+	text-decoration: none;
+	color:$color_link_base;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.elements_list {
+	padding:3rem;
+}
+
+.img {
+	width: 100%;
+	height: auto;
+}
+//------------------------------------------------------------base styles###

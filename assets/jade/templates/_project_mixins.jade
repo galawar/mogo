@@ -1,0 +1,141 @@
+mixin header
+	header.header
+		.header_main_row
+			+logo('header_mod')
+
+		.menu_trigger_wrap
+			.menu_trigger#menu_trigger
+				span.menu_trigger_decor
+
+		nav.header_menu_row
+			ul.header_menu_list
+				li.header_menu_item
+					a.header_menu_link(href='#home') Home
+				li.header_menu_item
+					a.header_menu_link(href='#about') About
+				li.header_menu_item
+					a.header_menu_link(href='#service') Service
+				li.header_menu_item
+					a.header_menu_link(href='#work') Work
+				li.header_menu_item
+					a.header_menu_link(href='#blog') Blog
+				li.header_menu_item
+					a.header_menu_link(href='#') Contact
+
+mixin footer
+	footer.footer
+
+
+//------------------------------------------------------------ logo
+mixin logo(mod)
+	h1.logo_wrap(class='#{mod}')
+		a.logo_text(class='#{mod}' href='#')= logo
+
+//------------------------------------------------------------ section_title
+mixin section_title(title1, title2, mod)
+	h2.section_title(class= mod)
+		if title1
+			span.title1(class= mod)= title1
+		span.title2(class= mod)= title2
+
+//------------------------------------------------------------ stories
+mixin stories(array)
+	ul.stories_list
+		each item in array
+			li.stories_l_item
+				a.image_link(href='#')
+					figure.image_wrap.effect1_mod
+						img.img(src= item.img)
+						figcaption.image_caption.story_mod= item.title
+
+//------------------------------------------------------------ facts
+mixin facts(array)
+	ul.facts_list
+		each item in array
+			li.facts_l_item
+				.fact_block
+					span.fact_text= item.text
+					span.fact_num= item.num
+
+//------------------------------------------------------------ services
+mixin services(array)
+	ul.services_list
+		each item in array
+			li.services_l_item
+				.service_block(class= item.mod)
+					h3.service_title= item.title
+					.service_text
+						p= item.text
+
+//------------------------------------------------------------ team
+mixin team(array, mod)
+	ul.team_list
+		each item in array
+			li.team_l_item
+				.teammate_block
+					figure.image_wrap.effect1_mod
+						img.img(src= item.photo alt= item.name title= item.name)
+
+						figcaption.image_caption
+							ul.teammate_socials
+								each link in item.soclinks
+									li.teammate_s_item
+										a.teammate_s_link(href= link.url class='#{link.text}_mod')
+					span.image_c_title= item.name
+					span.image_c_text= item.text
+
+//------------------------------------------------------------ what
+mixin accordion(array)
+	ul.accordion
+		each item in array
+			li.accordion_item
+				h3.accordion_title(class= item.mod)= item.title
+				.accordion_content
+					p= item.text
+
+//------------------------------------------------------------ testimonials
+mixin testimonials(mod, array)
+	.slider_wrap
+		ul.testimonials(class= mod)
+			each item in array
+				//-if item.img
+				//-	li.testimonials_item
+				//-		.t_image
+				//-			img.img(src= item.img)
+				//-		blockquote.blockquote= item.text
+				//-		cite.cite= item.cite
+				//-else
+				li.testimonials_item.icon_mod
+					blockquote.blockquote= item.text
+					cite.cite= item.cite
+
+//------------------------------------------------------------ clients
+mixin clients(array)
+	.clients
+		each item in array
+			.client_block
+				.client_image
+					img.img(src= item.img)
+				.text_wrap
+					.image_c_title= item.name
+					.image_c_text= item.spec
+					.text
+						p= item.text
+
+//------------------------------------------------------------ from blog
+mixin from_blog(array)
+	.recent
+		each item in array
+			a.recent_post(href= item.url)
+				figure.image_wrap.blog_mod
+					img.img.blog_mod(src= item.img)
+				figcaption.image_caption
+					h2.image_c_title= item.title
+					.image_c_text
+						p= item.text
+					.post_date
+						span.post_d_day= item.day
+						span.post_d_month= item.month
+					.post_stat_wrap
+						span.post_stat.views_mod= item.views
+						span.post_stat.comm_mod= item.comm

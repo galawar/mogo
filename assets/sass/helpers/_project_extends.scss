@@ -1,0 +1,54 @@
+%row {
+	width: 100%;
+	max-width: $page_width + $gl_indent;
+	@extend %global_flex_block_row_wrap_center;
+}
+
+%moded_section {
+	padding: $gl_indent 0 0 0;
+	@include bp($point_3, min) {
+		padding: $gl_indent * 2 0 0 0;
+	}
+	@include bp($point_2, min) {
+		padding: $gl_indent * 3 0 0 0;
+	}
+}
+
+%title {
+	color: $color_text_dark;
+	font-family: $font_title2;
+	font-weight: $font_def;
+	text-transform: uppercase;
+}
+
+%overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	@extend %global_flex_block_column_nowrap_center_center;
+	color: $white;
+	font-family: $font_title2;
+	font-weight: $font_bold;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	opacity: 0;
+	@include gradient;
+	@include transition(0.2s, 0.1s);
+}
+
+%image_caption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: $white;
+	font-family: $font_title2;
+	font-size: 2rem;
+	font-weight: $font_bold;
+	text-transform: uppercase;
+	@include gradient;
+	@extend %global_flex_block_column_nowrap_center_center;
+}

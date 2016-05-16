@@ -1,0 +1,150 @@
+$icon_font_name:"iconfont";
+@font-face {
+	font-family:$icon_font_name;
+	src: url('../fonts/icons/iconfont.eot');
+	src: url('../fonts/icons/iconfont.eot?#iefix') format('eot'),
+	url('../fonts/icons/iconfont.woff') format('woff'),
+	url('../fonts/icons/iconfont.ttf') format('truetype'),
+	url('../fonts/icons/iconfont.svg#iconfont') format('svg');
+}
+%icon-basket,
+%icon-camera,
+%icon-check,
+%icon-chevron-left,
+%icon-chevron-right,
+%icon-comments,
+%icon-design,
+%icon-digital,
+%icon-dribbble,
+%icon-equalizer,
+%icon-eye,
+%icon-facebook,
+%icon-google-plus,
+%icon-home,
+%icon-instagram,
+%icon-laptop,
+%icon-marker,
+%icon-picture,
+%icon-pinterest,
+%icon-search,
+%icon-talk,
+%icon-target,
+%icon-twitter,
+%icon-users,
+%icon-youtube,
+%last_selector {
+		&:before {
+			font-family:$icon_font_name;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: normal;
+			// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+			text-decoration: none;
+			text-transform: none;
+		}
+	}
+
+%icons_before_after {
+	&:before,
+	&:after {
+		font-family: $icon_font_name;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+%icons_after {
+	&:after {
+		font-family: $icon_font_name;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+%icon-basket:before {
+	content:'\E001';
+}
+%icon-camera:before {
+	content:'\E002';
+}
+%icon-check:before {
+	content:'\E003';
+}
+%icon-chevron-left:before {
+	content:'\E004';
+}
+%icon-chevron-right:before {
+	content:'\E005';
+}
+%icon-comments:before {
+	content:'\E006';
+}
+%icon-design:before {
+	content:'\E007';
+}
+%icon-digital:before {
+	content:'\E008';
+}
+%icon-dribbble:before {
+	content:'\E009';
+}
+%icon-equalizer:before {
+	content:'\E00A';
+}
+%icon-eye:before {
+	content:'\E00B';
+}
+%icon-facebook:before {
+	content:'\E00C';
+}
+%icon-google-plus:before {
+	content:'\E00D';
+}
+%icon-home:before {
+	content:'\E00E';
+}
+%icon-instagram:before {
+	content:'\E00F';
+}
+%icon-laptop:before {
+	content:'\E010';
+}
+%icon-marker:before {
+	content:'\E011';
+}
+%icon-picture:before {
+	content:'\E012';
+}
+%icon-pinterest:before {
+	content:'\E013';
+}
+%icon-search:before {
+	content:'\E014';
+}
+%icon-talk:before {
+	content:'\E015';
+}
+%icon-target:before {
+	content:'\E016';
+}
+%icon-twitter:before {
+	content:'\E017';
+}
+%icon-users:before {
+	content:'\E018';
+}
+%icon-youtube:before {
+	content:'\E019';
+}
