@@ -11,20 +11,25 @@ body {
 	font-size: $font_size_base;
 	color: $color_text_base;
 	-webkit-text-size-adjust: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	background: $body_bg;
+	line-height: 1.618;
 }
 .wrapper {
+	@extend %global_flex_block_column_wrap_flex-start;
 	position: relative;
+	//min-width: $page_width;
 	min-height:100%;
 	height: auto !important;
-	overflow:hidden;
+	overflow-x:hidden;
 }
 
 .base {
+	flex: 1;
 	position:relative;
-	padding: $height_header 0 0 0;
+	width: 100%;
+	max-width: 194rem;
+	margin: 0 auto;
+	padding: $height_header 0 $height_footer;
 }
 
 a {

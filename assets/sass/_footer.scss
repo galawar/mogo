@@ -1,10 +1,13 @@
 .footer {
-	height: $height_footer;
-	position:absolute;
-	left: 0;
-	right: 0;
-	//bottom: 0;
+	position: relative;
 	will-change:transform;
+	@include bp($point_3, min) {
+		height: $height_footer;
+		position:absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 }
 
 .footer_wrap {
