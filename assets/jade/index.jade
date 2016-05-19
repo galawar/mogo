@@ -1,0 +1,96 @@
+extends _layout
+include templates/_global_mixins
+include templates/_global_vars
+include templates/_project_mixins
+include templates/_project_vars
+block vars
+	- var array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index page'}
+
+block content_block
+
+	section.section.intro_mod#home
+		+section_title('Creative Template', 'Welcome To Mogo', 'intro_mod')
+		a.more_btn.intro_mod(href='#') Learn More
+		//- ul.intro_list
+		//- 	each item in [{num: '01', text: 'Intro'}, {num: '02', text: 'Work'}, {num: '03', text: 'About'}, {num: '04', text: 'Contacts'}]
+		//- 		li.intro_l_item
+		//- 			span.intro_i_num= item.num
+		//- 			span.intro_i_text= item.text
+
+	section.section#about
+		+section_title('What we do', 'Story About Us')
+		.section_descr
+			p Nec modus tibique intellegat ea. Et quem dissentias nam, ne has agam adipiscing. Ad harum dissentias interesset cum, nullam phaedrum no mel. Ad quis feugait nec.
+		+stories(stories)
+		+facts(facts)
+
+	section.section#service
+		+section_title('We work with', 'Amazing services')
+		+services(services)
+
+	section.section.design_mod
+		+section_title('For all devices', 'Unique Design')
+		.design_previews
+			figure.design_image
+				img.img(src='i/design01.png' alt='Tablet design')
+			figure.design_image.hover_mod
+				img.img(src='i/design02.png' alt='Phone design')
+
+	section.section
+		+section_title('Service', 'What We Do')
+		.section_descr
+			p His no odio erant persecuti. Ut dolore fastidii ius. Sed eu mucius alienum, ad putent essent sensibus pri. Duo ex tantas recusabo ocurreret, ad tibique nominati sit. Ne euismod voluptua per, dolore virtute te mel.
+		.what
+			figure.image_wrap.what_mod
+				img.img(src='i/about/what_we_do.jpg')
+
+			+accordion([
+				{mod: 'photo_mod', title: 'Photography', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
+				{mod: 'creative_mod', title: 'Creativity', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
+				{mod: 'design_mod', title: 'Web design', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
+			])
+
+		//-+testimonials('gray_mod', testimonials)
+
+
+	section.section
+		+section_title('Who we are', 'Meet Our Team')
+		.section_descr
+			p His no odio erant persecuti. Ut dolore fastidii ius. Sed eu mucius alienum, ad putent essent sensibus pri. Duo ex tantas recusabo ocurreret, ad tibique nominati sit. Ne euismod voluptua per, dolore virtute te mel.
+		+team(team)
+
+	section.section#work
+		+section_title('What we do', 'Some Of Our Work')
+		.section_descr
+			p His no odio erant persecuti. Ut dolore fastidii ius. Sed eu mucius alienum, ad putent essent sensibus pri. Duo ex tantas recusabo ocurreret, ad tibique nominati sit. Ne euismod voluptua per, dolore virtute te mel.
+
+		ul.works_list
+			each item in [1,2,3,4,5,6]
+				li.works_l_item
+					a.works_link(href='#')
+						figure.image_wrap.preview_mod.effect2_mod
+							img.img(src='i/works/thumb0#{item}.jpg')
+							figcaption.image_caption
+								span.image_c_title Image title
+								span.image_c_text Lorem ipsum dolor
+
+	section.section.what_mod
+		+section_title('Happy Clients', 'What People Say')
+		+clients([
+			{name:'Matthew Dix', spec:'Graphic Design', img:'i/clients/client01.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'},
+			{name:'Rich MacWood', spec:'Graphic Design', img:'i/clients/client02.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'},
+			{name:'John Doe', spec:'Graphic Design', img:'i/clients/client03.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'},
+			{name:'Mike Petrucci', spec:'Graphic Design', img:'i/clients/client04.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'}
+		])
+
+	section.section#blog
+		+section_title('Our stories', 'Latest Blog')
+		+from_blog([
+			{day:'25', month:'May', views:'123', comm:'20', url:'#', img:'i/blog/blog_img01.jpg', title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'},
+			{day:'10', month:'Jul', views:'123', comm:'20', url:'#', img:'i/blog/blog_img02.jpg', title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'},
+			{day:'05', month:'Sep', views:'123', comm:'20', url:'#', img:'i/blog/blog_img03.jpg', title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'}
+		])
+
+	section.section.map_mod
+		+section_title('', 'Open map', 'map_mod')
+	//-.elements_list

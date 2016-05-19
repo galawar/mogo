@@ -1,0 +1,58 @@
+%st_btn {
+	display: inline-block;
+	white-space: nowrap;
+	font-family: $font_title2;
+	text-align: center;
+	vertical-align: middle;
+	@include transition(0.2s, 0.2s);
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+//color extends
+%white_btn {
+	color: $white;
+	box-shadow: 0 0 0 0.4rem $white;
+	background: none;
+	&:hover {
+		color: $red;
+		background: $white;
+	}
+}
+
+%yellow_btn {
+	color: $red;
+	background: $yellow;
+}
+
+%red_btn {
+	color: $white;
+	background: $red;
+}
+
+%blue_btn {
+	color: $white;
+	background: $blue;
+}
+
+//size extends
+%big_btn {
+	width: 16rem;
+	height: 4rem;
+	line-height: 4rem;
+	font-weight: $font_bold;
+	text-transform: uppercase;
+}
+
+%social_btn {
+	width: 5.5rem;
+	height: 5.5rem;
+	line-height: 2;
+}
+
+%small_bth {
+	width: $gl_indent;
+	height: $gl_indent;
+}

@@ -1,0 +1,152 @@
+.footer {
+	height: $height_footer;
+	position:absolute;
+	//bottom: 0;
+	left: 0;
+	right: 0;
+	will-change:transform;
+}
+
+.footer_wrap {
+	@include row;
+	@extend %global_flex_block_row_wrap_flex-start;
+}
+
+.footer_section {
+	@include cols(12);
+	padding: 0 0 $gl_indent 0;
+
+	&.first_mod {
+		@include bp($point_3, min) {
+			@include cols(12);
+		}
+		@include bp($point_2, min) {
+			@include cols(5);
+		}
+	}
+
+	&.second_mod {
+		@include bp($point_3, min) {
+			@include cols(6);
+		}
+		@include bp($point_2, min) {
+			@include cols(4);
+		}
+	}
+
+	&.third_mod {
+		@include bp($point_3, min) {
+			@include cols(6);
+		}
+		@include bp($point_2, min) {
+			@include cols(3);
+		}
+	}
+}
+
+.footer_descr {
+	margin: 0 0 $gl_indent 0;
+}
+
+.follow_title {
+	color: $color_text_dark;
+	padding: 0 0 1rem 0;
+	margin: 0 0 1rem 0;
+	@include borderbottom;
+
+	.follow_count {
+		font-weight: $font_bold;
+		font-size: 1.8rem;
+		padding: 0 0.5rem 0 0;
+	}
+}
+
+.form_subscribe {
+	@extend %global_flex_block_row_wrap_flex-start;
+}
+
+.email_input {
+	flex: 0 0 100%;
+	height: $input_height;
+	padding: $input_offset;
+	margin: 0 0 1rem 0;
+	border: 1px solid $input_border_color;
+	
+	@include bp($point_4, min) {
+		flex: 0;
+	}
+	&::placeholder {
+		color: $color_text_base;
+		font-style: italic;
+	}
+}
+
+.sudscribe_button {
+	flex: 1 0 100%;
+	@extend %big_btn;
+	@extend %blue_btn;
+	@include bp($point_4, min) {
+		flex: 0 0 auto;
+	}
+}
+
+.blog_list {
+	@extend %global_flex_block_column_nowrap_flex-start;
+
+	.blog_item {
+		margin: 0 0 $gl_indent 0;
+		&:last-of-type {
+			margin: 0;
+		}
+	}
+}
+
+.post_block {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	.image_wrap {
+		flex: 0 0 12rem;
+		margin-right: 2rem;
+	}
+
+	.image_d_title {
+		color: $color_text_dark;
+		font-family: $font_title2;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+	}
+
+	.image_d_date {
+		font-style: italic;
+	}
+}
+
+.instagram_list {
+	@extend %global_flex_block_row_wrap_flex-start;
+	padding: 0 0 $gl_indent / 2 0;
+	
+	.instagram_item {
+		width: 8.8rem;
+		height: 8.8rem;
+		margin: 0 0.2rem 0.2rem 0;
+		@include bp($point_3, min) {
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.instagram_more {
+	color: $color_text_dark;
+	font-style: italic;
+}
+
+.footer_copyrights {
+	@include row;
+	color: $color_text_dark;
+	font-family: $font_title2;
+	padding: 2rem 0;
+	border-top: 1px solid $color-border;
+	text-align: center;
+}
