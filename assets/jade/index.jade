@@ -94,42 +94,4 @@ block content_block
 	section.section.map_mod
 		+section_title('', 'Open map', 'map_mod')
 
-	footer.footer
-		.footer_wrap
-			section.footer_section.first_mod
-				+logo('footer_mod')
-				.footer_descr
-					p No mei augue saperet, te nibh erroribus ocurreret vix. In vis ludus luptatum. Summo elitr lobortis est an, ex clita regione euismod vix. Usu te choro veritus expetenda, inani neglegentur an sea. Usu ad movet oblique.
-				.follow
-					.follow_title
-						span.follow_count 15k
-						span.follow_text followers
-					+social(follows, 'footer_mod')
-
-					form.form_subscribe#form_subscribe
-						input.email_input(type='email' placeholder='Your Email...')
-						button.sudscribe_button(type='submit' form='form_subscribe') Subscribe
-			section.footer_section.second_mod
-				+section_title('', 'Blogs', 'footer_mod')
-				ul.blog_list
-					each item in fromblog
-						li.blog_item
-							.post_block
-								a.image_wrap(href='#')
-									img.img(src= item.img)
-								.image_desc
-									a.image_d_title(href='#')= item.title
-									.image_d_date= item.date
-
-			section.footer_section.third_mod
-				+section_title('', 'Instagram', 'footer_mod')
-				ul.instagram_list
-					+loop_while(9)
-						li.instagram_item
-							a.instagram_link(href='#')
-								img.img(src='i/instagram/inst_thumb_0#{i}.jpg')
-				a.instagram_more(href='#') View more photos
-
-		.footer_copyrights &copy; 2016 MoGo free PSD template by Laaqiq
-
 	//-.elements_list
