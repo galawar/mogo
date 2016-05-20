@@ -88,9 +88,9 @@ mixin facts(array)
 	ul.facts_list
 		each item in array
 			li.facts_l_item
-				.fact_block
-					span.fact_text= item.text
-					span.fact_num= item.num
+				dl.fact_block
+					dt.fact_text= item.text
+					dd.fact_num= item.num
 
 //------------------------------------------------------------ services
 mixin services(array)
