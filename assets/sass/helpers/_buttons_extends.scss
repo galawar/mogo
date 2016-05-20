@@ -4,6 +4,7 @@
 	font-family: $font_title2;
 	text-align: center;
 	vertical-align: middle;
+	@include transition(0.2s, 0.2s);
 
 	&:hover, &:focus {
 		text-decoration: none;
@@ -13,8 +14,12 @@
 //color extends
 %white_btn {
 	color: $white;
-	border: 0.4rem solid $white;
+	box-shadow: inset 0 0 0 0.4rem $white;
 	background: none;
+	&:hover {
+		color: $red;
+		background: $white;
+	}
 }
 
 %yellow_btn {
