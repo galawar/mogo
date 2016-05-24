@@ -1,12 +1,14 @@
 .footer {
-	position: relative;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: $height_footer;
 	will-change:transform;
-	@include bp($point_3, min) {
-		height: $height_footer;
-		position:absolute;
-		//bottom: 0;
-		left: 0;
-		right: 0;
+
+	@include bp($point_3) {
+		position: static;
+		height: auto;
 	}
 }
 
