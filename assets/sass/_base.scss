@@ -15,21 +15,21 @@ body {
 	line-height: 1.618;
 }
 .wrapper {
-	@extend %global_flex_block_column_wrap_flex-start;
 	position: relative;
-	//min-width: $page_width;
 	min-height:100%;
 	height: auto !important;
-	overflow-x:hidden;
+	overflow:hidden;
 }
 
 .base {
-	flex: 1;
 	position:relative;
 	width: 100%;
 	max-width: 194rem;
 	margin: 0 auto;
-	padding: $height_header 0 0 0;
+	padding: $height_header 0 $height_footer;
+	@include bp($point_3) {
+		padding:$height_header 0 0;
+	}
 }
 
 a {
