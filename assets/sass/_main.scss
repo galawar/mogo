@@ -13,19 +13,19 @@
 .section {
 	@extend %global_flex_block_column_nowrap_center_center;
 	text-align: center;
-	margin: 0 0 $gl_indent 0;
+	margin: 0 0 $gl_indent * 3 0;
 
-	@include bp($point_2, min) {
-		margin: 0 0 $gl_indent * 3 0;
+	@include bp($point_2) {
+		margin: 0 0 $gl_indent 0;
 	}
 
 	// mods
 	&.intro_mod {
 		color: $white;
-		padding: $gl_indent 0;
+		padding: ($gl_indent * 7) 0 ($gl_indent * 7.65) 0;
 		@include bg('../i/intro-bg.jpg');
-		@include bp($point_2, min) {
-			padding: ($gl_indent * 7) 0 ($gl_indent * 7.65) 0;
+		@include bp($point_2) {
+			padding: $gl_indent;
 		}
 	}
 
@@ -55,12 +55,12 @@
 	position: relative;
 	@extend %global_flex_block_column_nowrap_center_center;
 	color: $color_text_dark;
-	padding: 0 ($gl_indent / 2) $gl_indent;
-	margin: 0 0 $gl_indent 0;
+	padding: 0 0 ($gl_indent * 1.33) 0;
+	margin: 0 0 ($gl_indent * 1.4) 0;
 
-	@include bp($point_2, min) {
-		padding: 0 0 ($gl_indent * 1.33) 0;
-		margin: 0 0 ($gl_indent * 1.4) 0;
+	@include bp($point_2) {
+		padding: 0 ($gl_indent / 2) $gl_indent;
+		margin: 0 0 $gl_indent 0;
 	}
 
 	&:after {
@@ -78,34 +78,44 @@
 
 		&.intro_mod {
 			color: inherit;
-			font-size: 3rem;
+			font-size: 7.2rem;
+			margin: 0 0 2rem 0;
 
-			@include bp($point_3, min) {
+			@include bp($point_3) {
 				font-size: 4rem;
 			}
-			@include bp($point_2 ,min) {
-				font-size: 7.2rem;
-				margin: 0 0 2rem 0;
+
+			@include bp($point_4) {
+				font-size: 3rem;
 			}
 		}
 	}
 
 	.title2 {
-		font-size: 3rem;
+		font-size: 4rem;
 		font-weight: $font_bold;
 		font-family: $font_title2;
 		text-transform: uppercase;
 		line-height: 0.9;
 
+		@include bp($point_4) {
+			font-size: 3rem;
+		}
+
 		&.intro_mod {
 			color: inherit;
-			font-size: 4rem;
+			font-size: 15rem;
 
-			@include bp($point_3, min) {
+			@include bp($point_2) {
+				font-size: 9rem;
+			}
+
+			@include bp($point_3) {
 				font-size: 7rem;
 			}
-			@include bp($point_2, min) {
-				font-size: 15rem;
+
+			@include bp($point_4) {
+				font-size: 3rem;
 			}
 		}
 
@@ -147,10 +157,10 @@
 
 .section_descr {
 	max-width: 95rem;
-	margin: 0 ($gl_indent / 2) $gl_indent;
+	margin: 0 auto ($gl_indent * 2.8);
 
-	@include bp($point_2, min) {
-		margin: 0 auto ($gl_indent * 2.8);
+	@include bp($point_2) {
+		margin: 0 ($gl_indent / 2) $gl_indent;
 	}
 }
 
@@ -173,23 +183,26 @@
 	&.effect2_mod {
 		overflow: visible;
 	}
+
 	&.big_mod {
 		//min-width: 38rem;
 		min-height: 47rem;
 	}
+
 	&.preview_mod {
 		flex: 0 0 100%;
 		//max-width: 39rem;
 		//max-height: 48rem;
 	}
+
 	&.what_mod {
-		//max-width: 57rem;
-		//max-height: 38rem;
-		@include cols(10);
-		@include bp($point_3, min) {
-			@include cols(6);
+		@include cols(6);
+
+		@include bp($point_3) {
+			@include cols(10.8);
 		}
 	}
+
 	&.blog_mod {
 		height: 24rem;
 	}
@@ -197,7 +210,7 @@
 
 .image_c_title {
 	display: block;
-	//margin: 2rem 0 0 0;
+	margin: 2rem 0 0 0;
 	color: $color_text_dark;
 	font-size: 1.5rem;
 	font-family: $font_title2;
@@ -318,19 +331,21 @@
 
 .stories_list {
 	@extend %row;
+	margin-bottom: $gl_indent * 2.2;
 
-	@include bp($point_2, min) {
-		margin-bottom: $gl_indent * 2.2;
+	@include bp($point_2) {
+		margin-bottom: $gl_indent;
 	}
 }
 
 .stories_l_item {
-	flex: 0 0 100%;
-	@include bp($point_3, min) {
+	flex: 0 0 33.33%;
+
+	@include bp($point_2) {
 		flex: 0 0 50%;
 	}
-	@include bp($point_2, min) {
-		flex: 0 0 33.33%;
+	@include bp($point_3) {
+		flex: 0 0 100%;
 	}
 }
 
@@ -342,23 +357,23 @@
 .services_l_item {
 	width: 36rem;
 	text-align: left;
-	@include cols(12);
+	@include cols(4);
 
-	@include bp($point_3, min) {
+	@include bp($point_2) {
 		@include cols(6);
 	}
 
-	@include bp($point_2, min) {
-		@include cols(4);
+	@include bp($point_3) {
+		@include cols(12);
 	}
 }
 
 .service_block {
 	position: relative;
-	padding: 0 0 0 8rem;
+	padding: 0 0 4rem 8rem;
 
-	@include bp($point_3, min) {
-		padding: 0 0 4rem 8rem;
+	@include bp($point_3) {
+		padding: 0 0 0 8rem;
 	}
 
 	&:before {
@@ -392,11 +407,11 @@
 	align-items: stretch;
 	position: relative;
 	color: $white;
-	padding: $gl_indent / 2;
+	padding: 0;
 	background: $blue;
-	
-	@include bp($point_2, min) {
-		padding: 0;
+
+	@include bp($point_2) {
+		padding: $gl_indent / 2;
 	}
 
 	&:before, &:after {
@@ -420,20 +435,16 @@
 	border: 1px solid rgba(255,255,255,0.3);
 	padding: $gl_indent / 2 0;
 	margin: 0;
-	flex: 0 0 100%;
+	flex: 0 0 20%;
 
-	@include bp($point_4, min) {
-		flex: 0 0 50%;
-	}
-
-	@include bp($point_3, min) {
+	@include bp($point_2) {
 		flex: 0 0 33.33%;
 		margin: 0;
 	}
 
-	@include bp($point_2, min) {
-		padding: 5rem 0;
-		flex: 0 0 20%;
+	@include bp($point_4) {
+		padding: 2.5rem 0;
+		flex: 0 0 100%;
 	}
 }
 
@@ -448,14 +459,15 @@
 	}
 
 	.fact_num {
-		font-size: 3.2rem;
+		font-size: 7.2rem;
 		font-weight: $font_bold;
-		@include bp($point_3, min) {
+
+		@include bp($point_2) {
 			font-size: 5rem;
 		}
 
-		@include bp($point_2, min) {
-			font-size: 7.2rem;
+		@include bp($point_3) {
+			font-size: 3.2rem;
 		}
 	}
 }
@@ -471,19 +483,22 @@
 
 	&.hover_mod {
 		position: absolute;
-		right: -1rem;
-		bottom: 0;
-		width: 70%;
+		right: 26rem;
+		bottom: -9.7rem;
 
-		@include bp($point_3, min) {
-			width: auto;
-		}
-		@include bp($point_2, min) {
+		@include bp($point_2) {
 			right: 13rem;
-			bottom: -9.7rem;
+			bottom: -4.7rem;
 		}
-		@include bp($point_1, min) {
-			right: 25rem;
+
+		@include bp($point_3) {
+			right: 2rem;
+		}
+
+		@include bp($point_4) {
+			right: -2rem;
+			bottom: -3.5rem;
+			width: 20rem;
 		}
 	}
 }
@@ -494,21 +509,15 @@
 }
 
 .team_l_item {
-	//min-width: 30rem;
-	//max-width: 38rem;
-	@include cols(10);
+	@include cols(4);
 	align-content: center;
 
-	@include bp($point_4, min) {
-		@include cols(8)
+	@include bp($point_3) {
+		@include cols(6)
 	}
 
-	@include bp($point_3, min) {
-		@include cols(6);
-	}
-
-	@include bp($point_2, min) {
-		@include cols(4);
+	@include bp($point_4) {
+		@include cols(12)
 	}
 }
 
@@ -545,14 +554,13 @@
 }
 
 .accordion {
-	@include cols(12);
-	width: 100%;
+	@include cols(6);
 	max-width: 60rem;
 	text-align: left;
 	border-collapse: collapse;
 
-	@include bp($point_3, min) {
-		@include cols(6);
+	@include bp($point_3) {
+		@include cols(12);
 	}
 }
 .accordion_item {
@@ -602,13 +610,14 @@
 }
 
 .works_l_item {
-	flex: 0 0 100%;
+	flex: 0 0 33.33%;
 
-	@include bp($point_4, min) {
+	@include bp($point_3) {
 		flex: 0 0 50%;
 	}
-	@include bp($point_3, min) {
-		flex: 0 0 33.33%;
+
+	@include bp($point_4) {
+		flex: 0 0 100%;
 	}
 }
 
@@ -739,14 +748,14 @@
 }
 
 .client_block {
-	@include cols(11);
+	@include cols(5);
 	text-align: left;
 	padding: 2rem 0;
-	@extend %global_flex_block_column_nowrap_center;
+	@extend %global_flex_block_row_nowrap_center;
 
-	@include bp($point_2, min) {
-		@include cols(5);
-		flex-flow: row nowrap;
+	@include bp($point_3) {
+		@include cols(11);
+		flex-flow: column;
 	}
 
 	.image_c_title {
@@ -768,12 +777,12 @@
 }
 
 .client_image {
-	flex: 0 0 10rem;
+	flex: 0 0 auto;
+	width: 11rem;
+	height: 11rem;
+	border-radius: 50%;
 	margin-right: $gl_indent;
-	.img {
-		height: 10rem;
-		border-radius: 50%;
-	}
+	overflow: hidden;
 }
 
 //------------------------------------------------------------ recent
@@ -783,12 +792,13 @@
 
 .recent_post {
 	position: relative;
-	@include cols(12);
-	@include bp($point_3, min) {
+	@include cols(4);
+
+	@include bp($point_2) {
 		@include cols(6);
 	}
-	@include bp($point_2, min) {
-		@include cols(4);
+	@include bp($point_3) {
+		@include cols(12);
 	}
 
 	.image_caption {

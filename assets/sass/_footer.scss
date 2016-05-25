@@ -6,7 +6,7 @@
 	height: $height_footer;
 	will-change:transform;
 
-	@include bp($point_3) {
+	@include bp($point_2) {
 		position: static;
 		height: auto;
 	}
@@ -18,33 +18,34 @@
 }
 
 .footer_section {
-	@include cols(12);
+	@include cols(5);
 	padding: 0 0 $gl_indent 0;
 
 	&.first_mod {
-		@include bp($point_3, min) {
+		@include bp($point_2) {
 			@include cols(12);
-		}
-		@include bp($point_2, min) {
-			@include cols(5);
 		}
 	}
 
 	&.second_mod {
-		@include bp($point_3, min) {
+		@include cols(4);
+
+		@include bp($point_2) {
 			@include cols(6);
 		}
-		@include bp($point_2, min) {
-			@include cols(4);
+		@include bp($point_4) {
+			@include cols(12);
 		}
 	}
 
 	&.third_mod {
-		@include bp($point_3, min) {
+		@include cols(3);
+
+		@include bp($point_2) {
 			@include cols(6);
 		}
-		@include bp($point_2, min) {
-			@include cols(3);
+		@include bp($point_4) {
+			@include cols(12);
 		}
 	}
 }
@@ -100,16 +101,11 @@
 .instagram_list {
 	@extend %global_flex_block_row_wrap_flex-start;
 	padding: 0 0 $gl_indent / 2 0;
-	
+
 	.instagram_item {
 		width: 8.8rem;
 		height: 8.8rem;
 		margin: 0 0.2rem 0.2rem 0;
-		@include bp($point_3, min) {
-			&:nth-child(3n) {
-				margin-right: 0;
-			}
-		}
 	}
 }
 

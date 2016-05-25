@@ -221,20 +221,13 @@
 }
 
 @mixin row {
-	width: 100%;
+	width: $page_width + $gl_indent;
 	margin: 0 auto;
 	@extend %global_flex_block_row_wrap_center;
 
-	@include bp($point_3, min) {
-		width: 75rem;
-	}
-
-	@include bp($point_2, min) {
-		width: 100rem;
-	}
-
-	@include bp($point_1, min) {
-		width: $page_width + $gl_indent;
+	@include bp($point_1) {
+		width: 100%;
+		padding: 0 $gl_indent / 2;
 	}
 }
 
