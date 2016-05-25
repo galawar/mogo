@@ -66,35 +66,6 @@
 	}
 }
 
-.form_subscribe {
-	@extend %global_flex_block_row_wrap_flex-start;
-}
-
-.email_input {
-	flex: 0 0 100%;
-	height: $input_height;
-	padding: $input_offset;
-	margin: 0 0 1rem 0;
-	border: 1px solid $input_border_color;
-	
-	@include bp($point_4, min) {
-		flex: 0;
-	}
-	&::placeholder {
-		color: $color_text_base;
-		font-style: italic;
-	}
-}
-
-.sudscribe_button {
-	flex: 1 0 100%;
-	@extend %big_btn;
-	@extend %blue_btn;
-	@include bp($point_4, min) {
-		flex: 0 0 auto;
-	}
-}
-
 .blog_list {
 	@extend %global_flex_block_column_nowrap_flex-start;
 

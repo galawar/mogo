@@ -36,8 +36,15 @@ mixin footer
 					+social(follows, 'footer_mod')
 
 					form.form_subscribe#form_subscribe
-						input.email_input(type='email' placeholder='Your Email...')
-						button.sudscribe_button(type='submit' form='form_subscribe') Subscribe
+						+form_element({
+							type: 'email',
+							class_array: default_field,
+							title: '',
+							id: 'email',
+							placeholder: 'Your Email...'
+						})
+							button.subscribe_button(type='submit' form='form_subscribe') Subscribe
+
 			section.footer_section.second_mod
 				+section_title('', 'Blogs', 'footer_mod')
 				ul.blog_list
