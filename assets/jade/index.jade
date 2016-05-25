@@ -76,12 +76,30 @@ block content_block
 
 	section.section.what_mod
 		+section_title('Happy Clients', 'What People Say')
-		+clients([
-			{name:'Matthew Dix', spec:'Graphic Design', img:'i/clients/client01.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'},
-			{name:'Rich MacWood', spec:'Graphic Design', img:'i/clients/client02.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'},
-			{name:'John Doe', spec:'Graphic Design', img:'i/clients/client03.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'},
-			{name:'Mike Petrucci', spec:'Graphic Design', img:'i/clients/client04.jpg', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'}
-		])
+		.clients
+			+client_block({
+				name: 'Matthew Dix',
+				spec:'Graphic Design',
+				img:'i/clients/client01.jpg',
+				text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'
+			})
+			+client_block({
+				name:'Rich MacWood',
+				spec:'Graphic Design',
+				img:'i/clients/client02.jpg',
+				text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'
+			})
+			+client_block({
+				name:'John Doe',
+				spec:'Graphic Design',
+				img:'i/clients/client03.jpg',
+				text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'})
+			+client_block({
+				name:'Mike Petrucci',
+				spec:'Graphic Design',
+				img:'i/clients/client04.jpg',
+				text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis neque vel augue accumsan, vel commodo sem lobortis. Fusce et condimentum ipsum. Nulla vehicula imperdiet lectus.'
+			})
 
 	section.section#blog
 		+section_title('Our stories', 'Latest Blog')

@@ -152,17 +152,15 @@ mixin testimonials(mod, array)
 					cite.cite= item.cite
 
 //------------------------------------------------------------ clients
-mixin clients(array)
-	.clients
-		each item in array
-			.client_block
-				.client_image
-					img.img(src= item.img)
-				.text_wrap
-					.image_c_title= item.name
-					.image_c_text= item.spec
-					.text
-						p= item.text
+mixin client_block(array)
+	.client_block
+		.client_image
+			img.img(src= array.img)
+		.text_wrap
+			.image_c_title= array.name
+			.image_c_text= array.spec
+			.text
+				p= array.text
 
 //------------------------------------------------------------ from blog
 mixin from_blog(array)
