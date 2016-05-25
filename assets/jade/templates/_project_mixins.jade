@@ -162,20 +162,18 @@ mixin client_block(array)
 			.text
 				p= array.text
 
-//------------------------------------------------------------ from blog
-mixin from_blog(array)
-	.recent
-		each item in array
-			a.recent_post(href= item.url)
-				figure.image_wrap.blog_mod
-					img.img.blog_mod(src= item.img)
-				figcaption.image_caption
-					h2.image_c_title= item.title
-					.image_c_text
-						p= item.text
-					.post_date
-						span.post_d_day= item.day
-						span.post_d_month= item.month
-					.post_stat_wrap
-						span.post_stat.views_mod= item.views
-						span.post_stat.comm_mod= item.comm
+//------------------------------------------------------------ recent_post
+mixin recent_post(array)
+	a.recent_post(href= array.url)
+		article.post
+			.image_wrap.blog_mod
+				img.img.blog_mod(src= array.img)
+			h2.post_title= array.title
+			.post_text
+				p= array.text
+			.post_date
+				span.post_d_day= array.day
+				span.post_d_month= array.month
+			.post_stat_wrap
+				span.post_stat.views_mod= array.views
+				span.post_stat.comm_mod= array.comm
