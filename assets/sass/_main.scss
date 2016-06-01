@@ -622,123 +622,175 @@
 }
 
 //------------------------------------------------------------ testimonials
-//.testimonials {
-//	@include clearfix;
-//	position: relative;
-//	text-align: left;
-	//&:before,
-	//&:after {
-	//	position: absolute;
-	//	top: 0;
-	//	content: '';
-	//	height: 100%;
-	//	width: 200%;
-	//	background: $gray;
-	//}
-	//
-	//&:before {
-	//	left: -200%;
-	//}
-	//
-	//&:after {
-	//	right: -200%;
-	//}
-	//
-	//&.gray_mod, &:after, &:before {
-	//	background: $gray;
-	//}
-//}
+.slider_wrap {
+	@include row;
+	position: relative;
+	text-align: left;
 
-//.slider_wrap {
-//	//@include clearfix;
-//	position: relative;
-//	padding: 1rem;
-//	@include row;
-//	background: $gray;
-//
-//	.bx-wrapper .bx-controls-direction a {
-//		position: absolute;
-//		top: 50%;
-//		transform: translateY(-50%);
-//		outline: 0;
-//		width: 32px;
-//		height: 32px;
-//		color: $color_text_base;
-//		line-height: 32px;
-//		z-index: 9999;
-//		font-size: 3rem;
-//	}
-//
-//	.bx-wrapper .bx-prev {
-//		left: 2rem;
-//		@extend %icon-chevron-left;
-//	}
-//
-//	.bx-wrapper .bx-next {
-//		right: 2rem;
-//		@extend %icon-chevron-right;
-//	}
-//}
+	&.gray_mod {
+		background: $gray;
 
-//.testimonials_item {
-	//@include clearfix;
-	//position: relative;
-	//padding: 0 3rem 0 10rem;
-	//height: 15rem;
+		&:before,
+		&:after {
+			position: absolute;
+			top: 0;
+			content: '';
+			height: 100%;
+			width: 200%;
+			background: $gray;
+		}
 
-	//&.icon_mod {
-	//	&:before {
-	//		display: none;
-	//	}
-	//
-	//	@include bp($point_2, min) {
-	//		padding-left: 20rem;
-	//
-	//		&:before {
-	//			display: block;
-	//			position: absolute;
-	//			left: 0;
-	//			height: 100%;
-	//			width: 15rem;
-	//			color: $blue;
-	//			line-height: 15rem;
-	//			font-size: 5rem;
-	//			text-align: center;
-	//			@extend %icon-talk;
-	//			border: 3px solid $blue;
-	//		}
-	//	}
-	//}
-//}
+		&:before {
+			left: -200%;
+		}
 
-//.blockquote {
-//	position: relative;
-//	font-style: italic;
-//	font-size: 1.5rem;
-//	@include bp($point_2, min) {
-//		font-size: 2.4rem;
-//	}
-//}
-//
-//.cite {
-//	position: relative;
-//	padding: 0 0 0 8rem;
-//	color: $color_text_dark;
-//	font-family: $font_title1;
-//	font-size: 1.6rem;
-//
-//	@include bp($point_2, min) {
-//		font-size: 2.4rem;
-//	}
-//
-//	&:before {
-//		position: absolute;
-//		left: 0;
-//		top: 50%;
-//		transform: translateY(-50%);
-//		@include redline;
-//	}
-//}
+		&:after {
+			right: -200%;
+		}
+	}
+
+	.bx-viewport {
+		height: auto !important;
+	}
+
+	.bx-wrapper .bx-controls-direction a {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		outline: 0;
+		width: 32px;
+		height: 32px;
+		color: $color_text_base;
+		line-height: 32px;
+		font-size: 3rem;
+		@include z-index(navbuttons);
+	}
+
+	.bx-wrapper .bx-prev {
+		left: 2rem;
+		@extend %icon-chevron-left;
+	}
+
+	.bx-wrapper .bx-next {
+		right: 2rem;
+		@extend %icon-chevron-right;
+	}
+}
+
+.bq_block {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	position: relative;
+	padding: 5rem 8rem;
+
+	@include bp($point_2) {
+		padding: 3rem 5rem;
+	}
+
+	&.icon_mod {
+		flex-flow: column;
+		padding: 7rem 10rem 7rem 20rem;
+		margin: 0 0 0 10rem;
+
+		&:before {
+			display: block;
+			position: absolute;
+			left: 0;
+			height: 15rem;
+			width: 15rem;
+			color: $blue;
+			line-height: 15rem;
+			font-size: 5rem;
+			text-align: center;
+			@extend %icon-talk;
+			box-shadow: inset 0 0 0 0.3rem $blue;
+		}
+
+		@include bp($point_2) {
+			padding: 3rem 10rem 3rem 20rem;
+			margin: 0 0 0 7rem;
+			&:before {
+				height: 12rem;
+				width: 12rem;
+				line-height: 12rem;
+				font-size: 4rem;
+			}
+		}
+
+		@include bp($point_3) {
+			padding: 5rem 5rem 5rem 12rem;
+			&:before {
+				height: 9rem;
+				width: 9rem;
+				line-height: 9rem;
+				font-size: 4rem;
+			}
+		}
+
+		@include bp($point_4) {
+			padding: 3rem 5rem;
+			margin: 0;
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+.bq_image {
+	flex: 0 0 19%;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 $gl_indent 0 0;
+
+	@include bp($point_2) {
+		flex: 0 0 15%;
+	}
+
+	@include bp($point_4) {
+		display: none;
+	}
+}
+
+.bq_text {
+	flex-flow: column nowrap;
+}
+
+.blockquote {
+	font-style: italic;
+	font-size: 2.4rem;
+
+	@include bp($point_2) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.6rem;
+	}
+}
+
+.cite {
+	position: relative;
+	padding: 0 0 0 8rem;
+	color: $color_text_dark;
+	font-family: $font_title1;
+	font-size: 2.4rem;
+
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		@include redline;
+	}
+
+	@include bp($point_2) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.8rem;
+	}
+}
 
 //------------------------------------------------------------ clients
 .clients {
