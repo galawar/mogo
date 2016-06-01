@@ -39,6 +39,12 @@ $(document).ready(function ($) {
 		}
 	});
 
+	$('.testimonials').bxSlider({
+		pager: false,
+		prevText: '',
+		nextText: '',
+	});
+
 });
 
 $(window).on('load', function () {

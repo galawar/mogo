@@ -137,19 +137,21 @@ mixin accordion(array)
 
 //------------------------------------------------------------ testimonials
 mixin testimonials(mod, array)
-	.slider_wrap
-		ul.testimonials(class= mod)
+	.slider_wrap(class= mod)
+		ul.testimonials
 			each item in array
-				//-if item.img
-				//-	li.testimonials_item
-				//-		.t_image
-				//-			img.img(src= item.img)
-				//-		blockquote.blockquote= item.text
-				//-		cite.cite= item.cite
-				//-else
-				li.testimonials_item.icon_mod
-					blockquote.blockquote= item.text
-					cite.cite= item.cite
+				li.testimonials_item
+					if item.img
+						.bq_block
+							.bq_image
+								img.img(src= item.img)
+							.bq_text
+								blockquote.blockquote= item.text
+								cite.cite= item.cite
+					else
+						.bq_block.icon_mod
+							blockquote.blockquote= item.text
+							cite.cite= item.cite
 
 //------------------------------------------------------------ clients
 mixin client_block(array)
