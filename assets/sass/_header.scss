@@ -64,7 +64,7 @@
 	font-family: $font_title2;
 
 	@include bp($point_3) {
-		flex-direction: column;
+		flex-flow: column wrap;
 	}
 }
 
@@ -89,6 +89,7 @@
 .header_menu_link {
 	position: relative;
 	color: $white;
+	text-align: center;
 	padding: 1rem 0;
 	border-bottom: 0.3rem solid transparent;
 	&:hover, &:focus, &:active {
