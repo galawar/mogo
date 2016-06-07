@@ -165,17 +165,20 @@ mixin client_block(array)
 				p= array.text
 
 //------------------------------------------------------------ recent_post
-mixin recent_post(array)
-	a.recent_post(href= array.url)
-		article.post
-			.image_wrap.blog_mod
-				img.img.blog_mod(src= array.img)
-			h2.post_title= array.title
-			.post_text
-				p= array.text
-			.post_date
-				span.post_d_day= array.day
-				span.post_d_month= array.month
-			.post_stat_wrap
-				span.post_stat.views_mod= array.views
-				span.post_stat.comm_mod= array.comm
+mixin recent(array)
+	ul.recent_list
+		each item in array
+			li.recent_item
+				article.post
+					.image_wrap.blog_mod
+						img.img.blog_mod(src= item.img)
+					h2.post_title
+						a.post_link(href='#')= item.title
+					.post_text
+						p= item.text
+					a.post_date(href='#')
+						span.post_d_day= item.day
+						span.post_d_month= item.month
+					.post_stat_wrap
+						a.post_stat.views_mod(href='#views')= item.views
+						a.post_stat.comm_mod(href='#comments')= item.comm
