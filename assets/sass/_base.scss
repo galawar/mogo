@@ -13,7 +13,11 @@ body {
 	-webkit-text-size-adjust: none;
 	background: $body_bg;
 	line-height: 1.618;
+	&.menu_open {
+		overflow: hidden;
+	}
 }
+
 .wrapper {
 	position: relative;
 	min-height:100%;

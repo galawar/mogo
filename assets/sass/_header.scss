@@ -30,12 +30,14 @@
 	@extend %global_flex_block_row_nowrap_flex-end_center;
 
 	@include bp($point_3) {
+		z-index: 250;
+		overflow: auto;
 		height: 100%;
-		padding: 12rem 3rem;
+		padding: 0 3rem;
 		background: $red;
 		transform: translate(0, -100%);
 		flex-flow: column;
-		justify-content: center;
+		justify-content: flex-start;
 
 		body.menu_open & {
 			transform: translate(0, 0);
@@ -45,7 +47,7 @@
 
 //------------------------------------------------------------logo
 .logo_wrap {
-	@include z-index(menu_trigger);
+	z-index: 200;
 }
 
 .logo_text {
@@ -64,19 +66,25 @@
 	font-family: $font_title2;
 
 	@include bp($point_3) {
-		flex-flow: column wrap;
+		margin: auto;
+		padding: 10rem 0;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		width: 100%;
 	}
 }
 
 .header_menu_item {
 	text-transform: uppercase;
 	margin: 0 0 0 5rem;
+	overflow: hidden;
+
 	&:first-of-type {
 		margin: 0;
 	}
 	@include bp($point_3) {
-		margin: 0;
-		padding: $gl_indent / 2 0;
+		margin: $gl_indent / 2 0 0;
 	}
 	&.active_mod {
 		.main_menu_link {
@@ -87,18 +95,27 @@
 }
 
 .header_menu_link {
+	display: block;
 	position: relative;
 	color: $white;
 	text-align: center;
 	padding: 1rem 0;
-	border-bottom: 0.3rem solid transparent;
-	&:hover, &:focus, &:active {
-		color: $yellow;
-		border-color: $yellow;
+	@include transition(0.2s, 0.1s);
+
+	&:after {
+		position: absolute;
+		bottom: 0rem;
+		left: -100%;
+		content: '';
+		height: 0.3rem;
+		width: 100%;
+		background: $yellow;
+		@include transition(0.2s, 0.1s);
 	}
 
-	@include bp($point_3) {
-		//color: black;
+	&:hover, &:focus, &:active {
+		color: $yellow;
+		&:after { left: 0; }
 	}
 
 	&.basket_mod {

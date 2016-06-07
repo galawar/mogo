@@ -33,7 +33,7 @@
 		@include bp($point_2) {
 			@include cols(6);
 		}
-		@include bp($point_4) {
+		@include bp($point_3) {
 			@include cols(12);
 		}
 	}
@@ -44,7 +44,7 @@
 		@include bp($point_2) {
 			@include cols(6);
 		}
-		@include bp($point_4) {
+		@include bp($point_3) {
 			@include cols(12);
 		}
 	}
@@ -115,10 +115,9 @@
 }
 
 .footer_copyrights {
-	@include row;
 	color: $color_text_dark;
 	font-family: $font_title2;
-	padding: 2rem 0;
+	padding: 2rem;
 	border-top: 1px solid $color-border;
 	text-align: center;
 }

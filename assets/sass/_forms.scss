@@ -51,6 +51,7 @@
 }
 
 .form_c_f_w {
+	display: flex;
 	position: relative;
 	flex: 0 0 100%;
 
@@ -63,7 +64,7 @@
 		@extend %form_field_default !optional;
 		display: inline-block;
 		width: 23rem;
-		margin: 0 -0.4rem 0 0;
+		//margin: 0 -0.4rem 0 0;
 
 		@include bp($point_4) {
 			width: 100%;

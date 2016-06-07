@@ -838,19 +838,25 @@
 }
 
 //------------------------------------------------------------ recent
+.recent_wrap {
+	padding: 0 $gl_indent / 2;
+}
+
 .recent {
-	@include row;
+	@extend %global_flex_block_row_wrap_flex-start;
 }
 
 .recent_post {
 	color: $color_text_base;
-	@include cols(4);
+	flex: 1 0 auto;
+	width: 33.33%;
+	padding: 1.5rem 1.5rem 0;
 
 	@include bp($point_2) {
-		@include cols(6);
+		width: 50%;
 	}
 	@include bp($point_3) {
-		@include cols(12);
+		width: 100%;
 	}
 }
 

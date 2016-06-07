@@ -105,34 +105,35 @@ block content_block
 
 	section.section#blog
 		+section_title('Our stories', 'Latest Blog')
-		.recent
-			+recent_post({
-				day:'25',
-				month:'May',
-				views:'123',
-				comm:'20',
-				url:'#',
-				img:'i/blog/blog_img01.jpg',
-				title:'Lorem ipsum dolor',
-				text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'
-			})
-			+recent_post({
-				day:'10',
-				month:'Jul',
-				views:'123',
-				comm:'20',
-				url:'#',
-				img:'i/blog/blog_img02.jpg',
-				title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'
-			})
-			+recent_post({
-				day:'05',
-				month:'Sep',
-				views:'123',
-				comm:'20',
-				url:'#',
-				img:'i/blog/blog_img03.jpg',
-				title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'})
+		.recent_wrap
+			.recent
+				+recent_post({
+					day:'25',
+					month:'May',
+					views:'123',
+					comm:'20',
+					url:'#',
+					img:'i/blog/blog_img01.jpg',
+					title:'Lorem ipsum dolor',
+					text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'
+				})
+				+recent_post({
+					day:'10',
+					month:'Jul',
+					views:'123',
+					comm:'20',
+					url:'#',
+					img:'i/blog/blog_img02.jpg',
+					title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'
+				})
+				+recent_post({
+					day:'05',
+					month:'Sep',
+					views:'123',
+					comm:'20',
+					url:'#',
+					img:'i/blog/blog_img03.jpg',
+					title:'Lorem ipsum dolor', text:'Vestibulum at lorem in mi faucibus efficitur non et arcu. Nullam cursus rhoncus massa, aliquam semper libero facilisis sagittis. Ut interdum scelerisque sollicitudin.'})
 
 	section.section.map_mod
 		+section_title('', 'Open map', 'map_mod')
