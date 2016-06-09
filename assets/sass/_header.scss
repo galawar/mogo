@@ -105,17 +105,20 @@
 	&:after {
 		position: absolute;
 		bottom: 0rem;
-		left: -100%;
+		left: 0;
 		content: '';
 		height: 0.3rem;
 		width: 100%;
 		background: $yellow;
+		transform: translateX(-100%);
 		@include transition(0.2s, 0.1s);
 	}
 
 	&:hover, &:focus, &:active {
 		color: $yellow;
-		&:after { left: 0; }
+		&:after {
+			transform: translateX(0);
+		}
 	}
 
 	&.basket_mod {
